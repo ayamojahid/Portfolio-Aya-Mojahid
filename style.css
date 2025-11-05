@@ -366,8 +366,8 @@ section {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 768px) {
-  section {
+@media (max-width: 600px) {
+    section {
     padding: 4rem 0;
   }
   
