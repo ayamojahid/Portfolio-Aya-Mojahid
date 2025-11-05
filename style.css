@@ -261,10 +261,12 @@ body {
   z-index: 9999;
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* ← CHANGÉ: début au lieu de centre */
   align-items: center;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
+  padding-top: 5rem; /* ← AJOUT: espace en haut */
+  overflow-y: auto; /* ← AJOUT: permettre le scroll */
 }
 
 .mobile-menu.open {
@@ -273,9 +275,9 @@ body {
 }
 
 .mobile-nav-item {
-  padding: 1.3rem 2.5rem;
-  margin: 0.7rem 0;
-  font-size: 1.3rem;
+  padding: 1rem 2rem; /* ← RÉDUIT: moins de padding */
+  margin: 0.5rem 0; /* ← RÉDUIT: moins de marge */
+  font-size: 1.1rem; /* ← RÉDUIT: taille police */
   font-weight: 600;
   text-align: center;
   border-radius: 50px;
@@ -299,7 +301,7 @@ body {
 
 /* Mobile Menu Header */
 .mobile-menu-header {
-  position: absolute;
+  position: fixed; /* ← CHANGÉ: fixed au lieu de absolute */
   top: 1.5rem;
   right: 1.5rem;
   z-index: 10000;
@@ -327,28 +329,16 @@ body {
   transform: rotate(90deg);
 }
 
-/* Logo Grid Animation */
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 2rem;
-}
-
-.tech-logo {
-  width: 80px;
-  height: 80px;
+/* AJOUT: Conteneur pour organiser les liens */
+.mobile-menu nav {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  background: var(--card);
-  transition: all 0.3s ease;
+  width: 100%;
+  gap: 0.1rem; /* ← ESPACEMENT entre les liens */
+  padding: 1rem 0;
 }
 
-.tech-logo:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-}
 
 /* Floating Elements */
 .floating-element {
