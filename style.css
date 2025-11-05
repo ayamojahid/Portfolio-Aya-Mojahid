@@ -365,7 +365,22 @@ section {
   padding: 6rem 0;
 }
 
-
+/* Mobile Optimizations */
+@media (max-width: 600px) {
+    section {
+    padding: 4rem 0;
+  }
+  
+  .tech-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1rem;
+  }
+}
 
 /* Loading Animation */
 .loading-bar {
